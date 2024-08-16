@@ -1,0 +1,92 @@
+/*
+#00ac9d  light blue tile
+#00467f  blue
+#f1f1f1  White base
+text
+#a3a3a3
+#e3e3e3
+
+dark
+#81a29
+
+
+
+ */
+body{
+	margin: 0;
+	font-family: "Open sans",sans-serif;
+	background-color: #f1f1f1
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+h1{
+	color: #00467f;
+}
+
+
+
+.menu{
+	margin: 0;
+	padding: 8px;
+	height: 21px;
+	background-color: #334a94;
+}
+
+.menu li{
+	display: inline;
+}
+
+.button{
+	font-family: Arial;
+	font-size: 1em;
+	font-style: none;
+	color: #ffffff;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.button:hover{
+	background-color: #786ed4;
+}
+
+header{
+	margin: 0;
+	height: 650px;	
+
+}
+
+.skyimage{
+	width: 100%;
+	max-width: 1200px;
+	position: absolute;
+	top: 36px;
+	left: 0;
+}
+
+.plaineimage{
+	width: 60%;
+	max-width: 1000px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	top: 30%;
+}
+
+header .content{
+	display: inline;
+	position: absolute;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	padding: 0 3em;
+	height: 80%;
+	max-width: 500px;
+}
+
+
+
+.theredimage {
+	width: 100%;
+	height: 100%;
+}
+

@@ -1,0 +1,12 @@
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\bin\Debug\RAD2022_2.exe.config
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\bin\Debug\RAD2022_2.exe
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\bin\Debug\RAD2022_2.pdb
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.csproj.AssemblyReference.cache
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.Form1.resources
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.Form2.resources
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.Properties.Resources.resources
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.csproj.GenerateResource.cache
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.csproj.CoreCompileInputs.cache
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.exe
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.pdb
+C:\Users\talepis\source\repos\RAD2022_2\RAD2022_2\obj\Debug\RAD2022_2.Login.resources

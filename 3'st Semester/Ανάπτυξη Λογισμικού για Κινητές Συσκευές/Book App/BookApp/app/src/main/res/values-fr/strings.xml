@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Book App</string>
+    <string name="open_button">OUVRIR</string>
+    <string name="hint_email">Email…</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="forgot_password">"Mot de passe oublié? "</string>
+    <string name="login">Connexion</string>
+    <string name="other_text1">Besoin d\'un nouveau compte ?</string>
+    <string name="other_text2">Ou connectez-vous avec un compte Google</string>
+    <string name="other_text3">Vous avez déjà un compte Se connecter ?</string>
+    <string name="register">Enregistrer</string>
+    <string name="read">Lire</string>
+</resources>

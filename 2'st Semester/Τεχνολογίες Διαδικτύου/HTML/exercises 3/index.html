@@ -1,0 +1,161 @@
+<!Doctype html>
+<html>
+<!-- <meta http-equiv="refresh" content="5;url= http://www.cs.unipi.gr/"> --><head><meta charset="utf-8">
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>
+			form { display: table; border-collapse:separate; border-spacing:5px;}
+			p { display: table-row; }
+			label { display: table-cell; }
+			input { display: table-cell; }
+		</style>
+	</head>
+	<header class="header" id="home">
+		<nav>
+			<div>
+				<ul class="menu">
+					<li><a href="#home" class="button" href="">Ionian Airlines Home</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	 <--------------------->
+	 <--------------------->	
+<body>
+	<form method="get" action="file_to_script_server_side.php">
+		<fieldset><legend>Προσωπικά στοιχεία</legend>
+		<p><label for="firstname">Όνομα:</label> <input placeholder="Μονο λατινικούς χαρακτήρες" type="text" id="firstname" name="firstname"></p>
+		<p><label for="lasttname">Επώνυμο :</label> <input placeholder="Μονο λατινικούς χαρακτήρες" type="text" id="lasttname" name="lasttname"></p>
+		<p><label for="phonenum">Σταθερό Τηλέφωνο :</label> <input value="+30210"  type="text" id="phonenum" name="phonenum"></p>
+		<p><label for="mobilenum">Κινητό Τηλέφωνο :</label> <input placeholder="Μονο Αριθμούς" type="text" id="mobilenum" name="mobilenum"></p>
+		<p><label for="mail">email:</label> <input type="email" id="mail" name="mail"></p><br>
+		Χώρα :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="xora" name="xora" size="1" >
+		<option >UK</option>
+		<option >Turkey</option>
+		<option >Russia</option>
+		<option >switzerland</option>
+		<option >Norway</option>
+		<option >Egypt</option>
+		<optgroup label="Ευρωπαικη Ενωση">
+			<option>Austria</option>
+			<option>Belgium</option>
+			<option>Bulgaria</option>
+			<option>Croatia</option>
+			<option>Republic of Cyprus</option>
+			<option>Czech Republic</option>
+			<option>Denmark</option>
+			<option>Estonia</option>
+			<option>Finland</option>
+			<option>France</option>
+			<option>Germany</option>
+			<option selected >Greece</option>
+			<option>Hungary</option>
+			<option>Ireland</option>
+			<option>Italy</option>
+			<option>Latvia</option>
+			<option>Lithuania</option>
+			<option>Luxembourg</option>
+			<option>Malta</option>
+			<option>Netherlands</option>
+			<option>Poland</option>
+			<option>Portugal</option>
+			<option>Romania</option>
+			<option>Slovakia</option>
+			<option>Slovenia</option>
+			<option>Spain</option>
+			<option>Sweden</option>
+		</optgroup>
+		</select>
+		<p><label for="city">Πόλη :</label> <input  type="text" id="city" name="city"></p>
+		<p><label for="adres">Διεύθυνση :</label> <input  type="text" id="adres" name="adres"></p>
+		<p><label for="zip">Ταχυδρομικόσ Κώδικας :</label> <input placeholder="Μονο Αριθμούς " type="text" id="zip" name="zip"></p><br>
+		Tύπος πιστωτικής κάρτας :&nbsp;<select id="xora" name="xora" size="1" >
+		<option >Visa</option>
+		<option >Mastercard</option>
+		<option >American Express</option>
+		</select>
+		<p><label for="curdnumb">Αριθμός πιστωτικής κάρτας :</label> <input placeholder="Μονο Αριθμούς " type="text"  id="curdnumb" name="curdnumb"></p>
+		<br>
+		<input id="submt" type="button" value="Aποθήκευση στοιχείων">
+		<input type="reset" value="Καθαρισμός στοιχείων">
+		<input type="reset" value="Eκτύπωση στοιχείων">
+		<br>
+	</form>
+<p id="errors" style="color:red;"></p>
+<script>
+	function checkMe(){
+		firstname=document.getElementById("firstname").value;
+		if (/^[A-Za-z]+$/.test(firstname) ) 
+		{
+			document.getElementById("firstname").style="";
+			document.getElementById("errors").innerText="";
+		} 
+		else 
+		{
+			document.getElementById("firstname").style="border:2px solid red;";
+			document.getElementById("errors").innerText="Το πεδίο του ονόματος είναι λάθος. \n";
+		}
+		lasttname=document.getElementById("lasttname").value;
+		if (/^[A-Za-z]+$/.test(lasttname) ) 
+		{
+			document.getElementById("lasttname").style="";
+			document.getElementById("errors").innerText="";
+		} 
+		else 
+		{
+			document.getElementById("lasttname").style="border:2px solid red;";
+			document.getElementById("errors").innerText+="Το πεδίο του Επωνύμου είναι λάθος. \n";
+		}
+		mail=document.getElementById("mail").value;
+		if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(mail) ) 
+		{
+			document.getElementById("mail").style="";
+			document.getElementById("errors").innerText="";
+		} 
+		else 
+		{
+			document.getElementById("mail").style="border:2px solid red;";
+			document.getElementById("errors").innerText+="Το πεδίο του Εmail είναι λάθος. \n";
+		}
+		phonenum=document.getElementById("phonenum").value;
+		if ( /[+30210]{1}[0-9]{7}/.test(phonenum) ) {
+			document.getElementById("errors").innerText="";
+			document.getElementById("phonenum").style="" ;
+		} 
+		else {
+			document.getElementById("errors").innerText += "Το πεδίο του Σταθερού Τηλφώνου δεν είναι της μωρφής +30210xxxxxxx. \n";
+			document.getElementById("phonenum").style="border:2px solid red;";
+		}
+		mobilenum=document.getElementById("mobilenum").value;
+		if ( /[+30]{1}[0-9]{10}/.test(mobilenum) ) {
+			document.getElementById("errors").innerText="";
+			document.getElementById("mobilenum").style="" ;
+		} 
+		else {
+			document.getElementById("errors").innerText += "Το πεδίο του Κινητού Τηλφώνου δεν είναι της μωρφής +30210xxxxxxx. \n";
+			document.getElementById("mobilenum").style="border:2px solid red;";
+		}
+		zip=document.getElementById("zip").value;
+		if ( /[0-9]{5}/.test(zip) ) {
+			document.getElementById("errors").innerText="";
+			document.getElementById("zip").style="" ;
+		} 
+		else {
+			document.getElementById("errors").innerText += "Το πεδίο του ταχ. κωδικού είναι λάθος. \n";
+			document.getElementById("zip").style="border:2px solid red;";
+		}
+		curdnumb=document.getElementById("curdnumb").value;
+		if ( /[0-9]{16}/.test(curdnumb) ) {
+			document.getElementById("errors").innerText="";
+			document.getElementById("curdnumb").style="" ;
+		} 
+		else {
+			document.getElementById("errors").innerText += "Το πεδίο του Αριθμoύ πιστωτικής κάρτας είναι λάθος. \n";
+			document.getElementById("curdnumb").style="border:2px solid red;";
+		}
+	}
+	document.getElementById("submt").addEventListener("click", function () {checkMe()});
+	</script>
+</body>
+

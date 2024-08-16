@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    background-image: url("airplane.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #00000068;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Century Gothic;
+    text-align: center;
+    color: white;
+    float: left;
+    padding: 20px 30px;
+    border-right: 1px solid #bbb;
+}
+
+    li a:hover {
+        background-color: #0000008c;
+    }
+
+.active {
+    background-color: #c17c4b;
+    padding-bottom: 15px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h2 {
+    font-family: Century Gothic;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+.card-body {
+    margin: auto;
+    border: solid 1px #dbdad7;
+    background-color: #ffffff41;
+    width: 60%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+
+.radio-button {
+    margin-left: 5px;
+}
+
+input {
+    border-width: 8px;
+    border-color: transparent;
+}
+
+.form-label {
+    color: white;
+    font-family: Century Gothic;
+    display: block;
+    font-weight: 700;
+    line-height: 45px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.center {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 3em;
+    word-spacing: 10px;
+}
+
+input[type=button] {
+    font-size: 18px;
+    font-family: "Century Gothic";
+}
+
+.search-buttons {
+    margin-top: 2rem;
+    width: 20%;
+}
+
+    .search-buttons:hover {
+        background-color: #c17c4b;
+    }

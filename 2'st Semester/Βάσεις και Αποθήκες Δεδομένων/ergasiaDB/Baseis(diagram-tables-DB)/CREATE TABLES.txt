@@ -1,0 +1,73 @@
+create table airport
+	(code			       varchar(3),
+	airport_name	       TEXT NOT NULL,
+	city			       TEXT NOT NULL,
+	timezone		       TEXT NOT NULL,
+	primary key (code)
+	);
+
+create table flight
+	(flight_no			       numeric(6),
+	arrival_airport		       varchar(3) CONSTRAINT arrival_not_equal_departure check (arrival_airport <> flight.departure_airport),
+	departure_airport		       varchar(3) CONSTRAINT departure_not_equal_arrival check (departure_airport <> flight.arrival_airport),
+	departure_date		       TIMESTAMP NOT NULL,
+	code				       varchar(3),
+	aircraft_code		       varchar(3),
+	model				       varchar(10),
+	distance			       integer NOT NULL,
+	scheduled_dep_time	       timestamp NOT NULL, 
+	scheduled_arriv_time	       timestamp NOT NULL,
+	scheduled_duration	       interval GENERATED ALWAYS as (scheduled_arriv_time - scheduled_dep_time) stored,
+	actual_dep_time		       timestamp CONSTRAINT actual_dep_time_not_equal_scheduled_dep_time check (actual_dep_time <> scheduled_dep_time),
+	actual_arriv_time		       timestamp CONSTRAINT actual_arriv_time_not_equal_scheduled_arriv_time check (actual_arriv_time <> scheduled_arriv_time),
+	flight_status			       varchar(20),
+	primary key (flight_no),
+	foreign key (code) references airport(code) on delete set null,
+	CHECK (flight_status IN ('Scheduled','OnTime','Delayed','Departed','Arrived','Cancelled'))
+	);
+
+create table aircraft
+	(aircraft_code	       varchar(3),
+	model			       varchar(10),
+	capacity		       numeric(3),
+	flight_no		       numeric(6),
+	aircraft_range	       integer,
+	primary key (aircraft_code),
+	foreign key (flight_no) references flight(flight_no) on delete cascade
+	);
+
+create table book
+	(book_date		       TIMESTAMP,
+	book_ref		       varchar(6) NOT NULL,
+	total_amount	       numeric(6,2) check (total_amount >= 0),
+	flight_no		       numeric(6) unique,
+            primary key (book_ref),
+	foreign key (flight_no) references flight(flight_no) on delete set null
+	);
+
+
+create table ticket
+	(ticket_no		       numeric(13),
+	passenger_id	       varchar(8),
+	passenger_name	       varchar(30) NOT NULL UNIQUE,
+	book_ref		       varchar(6), 
+	amount		       numeric(6,2) check(amount >= 0),
+	fare			       varchar(10) NOT NULL,
+	flight_no		       numeric(6) unique,
+	phone			       numeric(10),
+	zip_code		       numeric(5),
+	address		       text,
+	primary key (ticket_no),
+	foreign key (book_ref) references book(book_ref) on delete set null,
+	foreign key (flight_no) references flight(flight_no) on delete set null,
+	CHECK (fare IN ('Economy','Business','Firstclass'))
+	);
+
+create table boarding_pass
+	(passenger_name	       varchar(30) NOT NULL UNIQUE,
+	seat_no		       varchar(3),
+	flight_no		       numeric(6),
+	boarding_no		       INTEGER,
+	primary key (seat_no, flight_no),
+	foreign key (flight_no) references flight(flight_no) on delete set null
+	);

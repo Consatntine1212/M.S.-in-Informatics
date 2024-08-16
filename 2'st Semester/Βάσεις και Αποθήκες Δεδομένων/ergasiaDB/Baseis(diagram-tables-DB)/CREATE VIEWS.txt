@@ -1,0 +1,51 @@
+CREATE VIEW aircraft_view as
+SELECT distinct(airc.aircraft_range), f.distance FROM aircraft as airc, flight as f
+WHERE airc.aircraft_range > f.distance;
+
+
+CREATE VIEW book_date_view as
+SELECT f.departure_date, bk.book_date, date_part('day', departure_date - book_date) as difference_between_days FROM book as bk, flight as f
+WHERE (date_part('day', f.departure_date - bk.book_date) < 30 AND date_part('day', f.departure_date - bk.book_date) > 0);
+
+
+CREATE VIEW boarding_pass_view as
+SELECT f.flight_no as flight_number, f.flight_status FROM flight as f, ticket as tic
+WHERE f.flight_no = tic.flight_no
+AND (f.flight_status = 'OnTime' OR f.flight_status = 'Delayed');
+
+
+CREATE VIEW boarding_pass_view2 as
+SELECT  distinct(airc.capacity) as aircraft_capacity, (SELECT count(boarding_no) FROM boarding_pass) as count_of_boarding_passes
+FROM aircraft as airc, boarding_pass
+WHERE (SELECT count(boarding_no) FROM boarding_pass) <= airc.capacity;
+
+
+CREATE VIEW flight_status_view as
+SELECT f.flight_no, date_part('day',scheduled_dep_time-now()) as daydif_between_now_and_sceduled_dep_time,
+date_part('hour',scheduled_dep_time-now()) as hourdif_between_now_and_sceduled_dep_time,
+date_part('hour',actual_dep_time-now()) as hourdif_between_now_and_actual_dep_time,
+date_part('hour',actual_arriv_time-now()) as hourdif_between_now_and_actual_arriv_time,
+f.flight_status,
+CASE
+   WHEN date_part('day',scheduled_dep_time-now()) < 30 AND date_part('hour',scheduled_dep_time-now()) > 1 THEN flight_status = 'Scheduled'
+   WHEN date_part('hour',scheduled_dep_time-now()) < 24 AND date_part('hour',scheduled_dep_time-now()) > 0 THEN flight_status = 'OnTime'
+   WHEN date_part('hour',scheduled_dep_time-now()) = 0 AND date_part('hour',actual_dep_time-now()) > 0 THEN flight_status = 'Delayed'
+   WHEN date_part('hour',actual_dep_time-now()) = 0 AND date_part('hour',actual_arriv_time-now()) > 0 THEN flight_status = 'Departed'
+   WHEN date_part('hour',scheduled_arriv_time-now()) < 0 THEN flight_status = 'Arrived'
+   ELSE flight_status='Cancelled'
+END
+FROM flight as f;
+
+
+
+Για έλεγχο των περιορισμών:
+
+SELECT * FROM aircraft_view;
+
+SELECT * FROM book_date_view;
+
+SELECT * FROM boarding_pass_view;
+
+SELECT * FROM boarding_pass_view2;
+
+SELECT * FROM flight_status_view;

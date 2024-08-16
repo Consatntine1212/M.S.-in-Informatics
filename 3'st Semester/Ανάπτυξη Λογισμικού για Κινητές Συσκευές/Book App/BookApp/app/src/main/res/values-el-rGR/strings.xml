@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Book App</string>
+    <string name="open_button">Ανοιξε</string>
+    <string name="hint_email">Εμαιλ...</string>
+    <string name="hint_password">Κωδικός...</string>
+    <string name="forgot_password">ξέχασα τον κωδικό πρόσβασης</string>
+    <string name="login">Συνδεση</string>
+    <string name="other_text1">Χρειάζεστε νεο λογαριασμό</string>
+    <string name="other_text2">Συνδεθείτε με λογαριασμο google</string>
+    <string name="other_text3">Εχετε ηδη λογαριασμο; συνδεθειτε εδω</string>
+    <string name="register">Δημιουργια Λογαριασμου</string>
+    <string name="read">Διαβασε</string>
+</resources>

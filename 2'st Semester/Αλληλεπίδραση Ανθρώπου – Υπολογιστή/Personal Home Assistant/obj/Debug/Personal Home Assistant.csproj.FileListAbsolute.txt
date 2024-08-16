@@ -1,0 +1,11 @@
+C:\Users\Vagelis\Desktop\Personal Home Assistant\bin\Debug\Personal Home Assistant.exe.config
+C:\Users\Vagelis\Desktop\Personal Home Assistant\bin\Debug\Personal Home Assistant.exe
+C:\Users\Vagelis\Desktop\Personal Home Assistant\bin\Debug\Personal Home Assistant.pdb
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.csproj.AssemblyReference.cache
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal_Home_Assistant.MainForm.resources
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal_Home_Assistant.Properties.Resources.resources
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.csproj.GenerateResource.cache
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.csproj.CoreCompileInputs.cache
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.exe
+C:\Users\Vagelis\Desktop\Personal Home Assistant\obj\Debug\Personal Home Assistant.pdb

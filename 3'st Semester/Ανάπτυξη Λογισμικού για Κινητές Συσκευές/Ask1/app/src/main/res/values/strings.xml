@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Ask1</string>
+    <string name="uni_name">University of Piraeus \n Msc Informatics</string>
+    <string name="intro">Brief Presentation of the MS "Information" \nThe Masters Program in "Informatics"has as its object the thorough and high-level education of graduates of departments of various scientific specialties in the principles, application and methodologies of the modern science of Informatics, TheMasters Program in "Informatics" treats contemporary issues of technology and applications of InformationScience in other modern sciences. The content and nature of the program has been designed to successfullyrespond to the special scientific needs caused by the rapid development of Information Technology and itsapplications at the European and international level.</string>
+    <string name="button_1">Classes</string>
+    <string name="button_2">Teachers</string>
+    <string name="classes">During your studies you will partake in the following Courses:
+\n"      "First Semester
+\nIntroduction to Computer Science
+\nProgramming Principles –Languages C, C++
+\nData Structures
+\nProgramming Languages and Compilers
+\nOperating Systems
+\nElective Course 1
+\n"      "Second Semester
+\nObject-Oriented Programming – Internet Technologies
+\nDatabases and Data Warehouses
+\nArtificial Intelligence – Expert Systems
+\nHuman-Computer Interaction
+\nRapid Application Development
+\nElective Course 1
+\n"      "Third Semester
+\nSoftware Engineering
+\nPattern Recognition
+\nAlgorithms
+\nComputer Networks
+\nSoftware Systems fοr Enterprise Resource Planning
+\nElective Course 1x
+\n"      "Forth Semester
+\nmaster degree final Thesis
+\nElective Course 1
+\nElective Course 2
+    </string>
+    <string name="teachers">
+Our department teaching staff are as follows:
+\n"      "Head of Department
+\nVirvou Maria
+\n"      "Deputy Head of Department
+\nVergados Dimitrios
+\n"      "Professors
+\nApostolou Dimitrios
+\nVergados Dimitrios
+\nVirvou Maria
+\nDespotis Dimitrios
+\nDouligeris Christos
+\nTheodorides YannisT
+\nKonstantopoulos Charalampos
+\nMetaxiotis Konstantinos
+\nPanagiotopoulos Themistoklis
+\nPolemi Despoina
+\nSapounakis Aristides
+\nTsihrintzis George
+\n"      "Associate Professors
+\nAlepis Efthimios
+\nVougiouklidou Anna
+\nKotzanikolaou Panagiotis
+\nPatsakis Constantinos
+\nPsarakis Michael
+\n"      "Assistant Professors
+\nVenetis Ioannis
+\nPikrakis Aggelos
+\nSakkopoulos Evangelos
+\nSotiropoulos Dionisios
+\nTasoulas Ioannis
+\n"      "Emeritus Professors
+\nAlexandris Nikolaos
+\nAsimakopoulos Nikitas
+\nGeorgiakodis Michael
+\nGeorgiakodis Fotios
+\nPanagiotopoulos Antonios
+\nPanagiotopoulos Ioannis-Christos
+\nTsikouras Panagiotis-George
+\nFountas Evangelos
+    </string>
+</resources>

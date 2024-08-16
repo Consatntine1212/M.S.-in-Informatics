@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Δημιουργία φόρμας συλλογής στοιχείων </title>
+	<style>
+		form { display: table; border-collapse:separate; border-spacing:5px;}
+		p { display: table-row; }
+		label { display: table-cell; }
+		input { display: table-cell; }
+	</style>
+</head>
+<body>
+	<form method="get" action="file_to_script_server_side.php">
+		<fieldset><legend>Προσωπικά στοιχεία</legend>
+		<p><label for="firstname">Όνομα:</label> <input placeholder="μονο ελληνικούς χαρακτήρες" type="text" id="firstname" name="firstname"></p>
+		<p><label for="numb">Αριθμός Μητρώου:</label> <input type="text" value="mppl21xxx" id="numb" name="numb"></p>
+		email: <input type="email" id="mail" name="mail"> <br>
+		<p><label for="zip">Όνομα:</label> <input type="text" id="zip" name="zip"></p>
+		Χώρα: <select id="xora" name="xora" size="4" >
+		<option >UK</option>
+		<optgroup label="Μεσογειακές Χώρες">
+		<option selected >Greece</option>
+		<option>Italy</option>
+		</optgroup>
+		<option>France</option>
+		</select>
+		μου αρέσει η html;
+		Ναι <input type="radio" id="qhtmly" name="payment" value="yes">
+		Όχι <input type="radio" id="qhtmln" name="payment" value="no">
+		παρακολούθησα το πρώτο εργαστήριο; <input type="checkbox" id="erg1"name="erg1">
+		Παρατηρήσεις: <textarea id="comments" name="comments" rows="3" και cols="30" readonly > </textarea>
+		<input id="submt" type="button" value="Αποστολή στοιχείων">
+		<input type="reset" value="Καθαρισμός στοιχείων">
+		</fieldset>
+	</form>
+<p id="errors" style="color:red;"></p>
+<script>
+	function checkMe(){
+		firstname=document.getElementById("firstname").value;
+		if (/^[α-ω]+$/.test(firstname) ) 
+		{
+			alert("Συγχαρητήρια!!!\n για τα πεζά ελληνικά γράμματα \n στο πεδίο του ονόματος.");
+			document.getElementById("firstname").style="";
+			document.getElementById("errors").innerText="";
+		} 
+		else 
+		{
+			alert("Παρακαλώ ελέγξτε το πεδίο του ονόματος \nνα περιέχει μόνον πεζά ελληνικά \nή να μην είναι κενό. ");
+			document.getElementById("firstname").style="border:2px solid red;";
+			document.getElementById("errors").innerText="Το πεδίο του ονόματος είναι λάθος. ";
+		}
+		zip=document.getElementById("zip").value;
+		if ( /^[0-9]+$/.test(zip) ) {
+			alert("Συγχαρητήρια!!!\n για το πεδίο ταχ. κωδικός.");
+			document.getElementById("errors").innerText="";
+			document.getElementById("zip").style="" ;
+		} 
+		else {
+			alert("Παρακαλώ ελέγξτε το πεδίο του ταχ. κωδικού \nνα περιέχει μόνον αριθμούς \nή να μην είναι κενό. ");
+			document.getElementById("errors").innerText += "Το πεδίο του ταχ. κωδικού είναι λάθος. ";
+			document.getElementById("zip").style="border:2px solid red;";
+		}
+	}
+	document.getElementById("submt").addEventListener("click", function () {checkMe()});
+</script>
+</body>
+</html>
